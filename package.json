@@ -1,0 +1,31 @@
+{
+  "name": "gmail-desktop",
+  "author": "1887jonas",
+  "version": "1.0.0",
+  "description": "Electron App um Gmail als Desktop App nutzen zu können",
+  "homepage": "https://github.com/1887jonas/gmail-desktop",
+  "main": "src/main.js",
+  "build": {
+    "appId": "de.1887jonas.gmail-desktop",
+    "productName": "Gmail Desktop",
+    "icon": "assets/mail.png"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [
+    "gmail",
+    "desktop",
+    "electron",
+    "windows",
+    "app",
+    "mail",
+    "email"
+  ],
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "electron": "^24.1.2",
+    "electron-builder": "^23.6.0"
+  }
+}
