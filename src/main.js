@@ -15,11 +15,14 @@ function createWindow () {
             contextIsolation: true,
         },
         autoHideMenuBar: true,
-        icon: path.join(__dirname, "../assets/mail.png")
+        icon: path.join(__dirname, "../assets/mail.png"),
+        show: false
     });
 
     // Fenster maximieren
     mainWindow.maximize();
+    // Fenster anzeigen
+    mainWindow.show();
 
     // Gmail laden
     (async () => {
