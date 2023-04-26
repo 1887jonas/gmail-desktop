@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Notification } = require("electron");
 const path = require("path");
 
 let mainWindow
@@ -24,6 +24,8 @@ function createWindow () {
     // Fenster anzeigen
     mainWindow.show();
 
+    if(process.platform === "win32") app.setAppUserModelId("Gmail Desktop");
+
     // Gmail laden
     (async () => {
         try {
@@ -32,6 +34,14 @@ function createWindow () {
             console.log("Failed to load URL:" + error);
         }
     })();
+
+    function sendNotification(title, body){
+        new Notification({
+            title: title,
+            body: body,
+            icon: path.join(__dirname, "../assets/mail.png")
+        }).show();
+    }
 
     // Mainwindow nullen, wenn geschlossen
     mainWindow.on("closed", () => mainWindow = null);
